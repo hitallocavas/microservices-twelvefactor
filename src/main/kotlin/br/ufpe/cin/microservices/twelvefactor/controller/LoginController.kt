@@ -15,8 +15,8 @@ class LoginController(@Autowired private val credentialProperties: CredentialPro
     @PostMapping
     fun login(@RequestBody loginDTO: LoginDTO): String {
         when (loginDTO.username == credentialProperties.user && loginDTO.password == credentialProperties.pass) {
-            true -> return "Login Válido"
-            false -> return "Login Inválido"
+            true -> return "{ \"message\": \"Login Válido\", \"secret\": 42 }"
+            false -> return "{ \"message\": \"Login Inválido\", \"secret\": null }"
         }
 
     }
