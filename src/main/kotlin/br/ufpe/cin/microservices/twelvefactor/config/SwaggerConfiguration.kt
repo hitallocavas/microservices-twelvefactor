@@ -14,7 +14,7 @@ class SwaggerConfiguration {
     @Bean
     fun api(): Docket = Docket(DocumentationType.SWAGGER_2)
             .select()
-            .apis(RequestHandlerSelectors.any())
+            .apis(RequestHandlerSelectors.basePackage("br.ufpe.cin.microservices.twelvefactor"))
             .paths(PathSelectors.any())
             .build()
 }
